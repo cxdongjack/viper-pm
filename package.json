@@ -1,8 +1,11 @@
 {
-  "name": "viper-git",
+  "name": "viper-pm",
   "version": "1.0.0",
   "description": "simplify git operation!",
-  "bin": "bin/viper-git",
+  "bin": {
+    "viper-push": "push",
+    "viper-update": "update"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
