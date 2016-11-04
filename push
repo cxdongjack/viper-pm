@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+require('shelljs/global');
+var util = require('./util');
+
+var modules = util.modules(process.argv.slice(2));
+
+set('-e');
+rm('-rf', util.VIPER_MODULES);
+
+modules.forEach(main);
+function main(moduleDict) {
+    var module = moduleDict.name;
+    util.clone(module, true);
+    util.sync(util.localDir(module), util.remoteDir(module));
+    cd(util.remoteDir(module));
+    exec('git add -A');
+    util.spawn('git commit --verbose');
+    util.updateConf(module, util.gitHEAD(module));
+}
+

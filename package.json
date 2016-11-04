@@ -9,5 +9,7 @@
   },
   "author": "",
   "license": "ISC",
-  "viper_modules": []
+  "viper_modules": [
+    "lib@11f68bb9"
+  ]
 }
