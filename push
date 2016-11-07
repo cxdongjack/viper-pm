@@ -16,6 +16,7 @@ function main(moduleDict) {
     cd(util.remoteDir(module));
     exec('git add -A');
     util.spawn('git commit --verbose');
+    exec('git push');
     util.updateConf(module, util.gitHEAD(module));
 }
 
