@@ -1,6 +1,6 @@
 {
   "name": "viper-pm",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simplify git operation!",
   "bin": {
     "viper-push": "push",
