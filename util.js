@@ -99,6 +99,7 @@ if (process.argv[2] == '__test') {
     conf(['lib']);
     // replace
     assert.deepEqual(replace(['a'], 'a', '1'), ['a@1']);
+    assert.deepEqual(replace([], 'a', '1'), ['a@1']);
     // localDir
     assert.deepEqual(localDir('lib'), `${PWD}/${MODULE_HOME}/lib`);
     // remoteDir
@@ -108,10 +109,12 @@ if (process.argv[2] == '__test') {
 // helper
 function replace(array, item, revision) {
     var index = clear(array).indexOf(item);
+    var repo = `${item}@${revision}`;
     if (index === -1) {
+        array.push(repo);
         return array;
     }
-    array[index] = `${item}@${revision}`;
+    array[index] = repo;
     return array;
 }
 
