@@ -8,11 +8,11 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node util.js __test"
   },
   "author": "",
   "license": "ISC",
   "viper_modules": [
-    "lib@11f68bb9"
+    "lib"
   ]
 }

@@ -22,7 +22,7 @@ function getModules() {
     var modules = process.argv.slice(2);
 
     if (!modules.length) {
-        modules = util.clear(conf());
+        modules = util.clear(util.conf());
     }
 
     return modules;
